@@ -1,0 +1,19 @@
+#!/bin/bash
+
+exec 2>&1
+
+set -e
+set -u
+
+ulimit -n 20480
+
+user="<%= node.droonga.engine.user_name %>"
+group="<%= node.droonga.engine.group_name %>"
+work_dir="$(echo ~${user})/droonga-engine/current"
+config_dir="${work_dir}/config"
+
+fluentd_conf="${config_dir}/fluentd.conf"
+export DROONGA_CATALOG="${config_dir}/catalog.json"
+
+cd "$work_dir"
+exec chpst -u "$user:$group" bin/fluentd --config "${fluentd_conf}"
