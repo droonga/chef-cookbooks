@@ -23,6 +23,9 @@ user_name  = droonga_engine["user_name"]
 group_name = droonga_engine["group_name"]
 home_dir   = droonga_engine["home"]
 
+group group_name do
+end
+
 user user_name do
   home     home_dir
   group    group_name
