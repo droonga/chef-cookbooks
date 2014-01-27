@@ -1,9 +1,10 @@
+<% engine = node.droonga.engine %>
 <source>
   type forward
-  port 23003
+  port <%= engine.port %>
 </source>
-<match droonga.message>
-  name localhost:23003/droonga
+<match <%= engine.tag %>.message>
+  name localhost:<%= engine.port %>/<%= engine.tag %>
   type droonga
 </match>
 <match output.message>

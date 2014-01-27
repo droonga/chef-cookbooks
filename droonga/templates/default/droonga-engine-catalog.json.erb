@@ -1,8 +1,9 @@
+<% engine = node.droonga.engine %>
 {
   "effective_date": "2014-01-24T00:00:00Z",
-  "zones": ["localhost:23003/droonga"],
+  "zones": ["localhost:<%= engine.port %>/<%= engine.tag %>"],
   "farms": {
-    "localhost:23003/droonga": {
+    "localhost:<%= engine.port %>/<%= engine.tag %>": {
       "device": ".",
       "capacity": 10
     }
@@ -20,8 +21,8 @@
           "weight": 50,
           "partitions": {
             "2014-01-24": [
-              "localhost:23003/droonga.000",
-              "localhost:23003/droonga.001"
+              "localhost:<%= engine.port %>/<%= engine.tag %>.000",
+              "localhost:<%= engine.port %>/<%= engine.tag %>.001"
             ]
           }
         },
@@ -29,8 +30,8 @@
           "weight": 50,
           "partitions": {
             "2014-01-24": [
-              "localhost:23003/droonga.002",
-              "localhost:23003/droonga.003"
+              "localhost:<%= engine.port %>/<%= engine.tag %>.002",
+              "localhost:<%= engine.port %>/<%= engine.tag %>.003"
             ]
           }
         }
