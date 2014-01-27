@@ -4,7 +4,7 @@
   port <%= engine.port %>
 </source>
 <match <%= engine.tag %>.message>
-  name <%= engine.host %>localhost:<%= engine.port %>/<%= engine.tag %>
+  name <%= engine.host %>:<%= engine.port %>/<%= engine.tag %>
   type droonga
 </match>
 <match output.message>
