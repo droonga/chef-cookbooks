@@ -9,7 +9,7 @@ ulimit -n 20480
 
 user="<%= node.droonga.engine.user_name %>"
 group="<%= node.droonga.engine.group_name %>"
-work_dir="$(echo ~${user})/droonga-engine/current"
+work_dir="$(eval "echo ~${user}")/droonga-engine/current"
 config_dir="${work_dir}/config"
 
 fluentd_conf="${config_dir}/fluentd.conf"
