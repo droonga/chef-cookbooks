@@ -81,7 +81,7 @@ deploy "#{home_dir}/droonga-engine" do
       mode 0644
     end
 
-    template "#{config_dir}/catalog.conf" do
+    template "#{config_dir}/catalog.json" do
       source "droonga-engine-catalog.json.erb"
       user user_name
       group group_name
