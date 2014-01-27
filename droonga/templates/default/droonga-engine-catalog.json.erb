@@ -1,9 +1,9 @@
 <% engine = node.droonga.engine %>
 {
   "effective_date": "2014-01-24T00:00:00Z",
-  "zones": ["localhost:<%= engine.port %>/<%= engine.tag %>"],
+  "zones": ["<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>"],
   "farms": {
-    "localhost:<%= engine.port %>/<%= engine.tag %>": {
+    "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>": {
       "device": ".",
       "capacity": 10
     }
@@ -17,21 +17,21 @@
       "partition_key": "_key",
       "date_range": "infinity",
       "ring": {
-        "localhost:23041": {
+        "<%= engine.host %>:23041": {
           "weight": 50,
           "partitions": {
             "2014-01-24": [
-              "localhost:<%= engine.port %>/<%= engine.tag %>.000",
-              "localhost:<%= engine.port %>/<%= engine.tag %>.001"
+              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.000",
+              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.001"
             ]
           }
         },
-        "localhost:23042": {
+        "<%= engine.host %>:23042": {
           "weight": 50,
           "partitions": {
             "2014-01-24": [
-              "localhost:<%= engine.port %>/<%= engine.tag %>.002",
-              "localhost:<%= engine.port %>/<%= engine.tag %>.003"
+              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.002",
+              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.003"
             ]
           }
         }
