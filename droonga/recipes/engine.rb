@@ -76,6 +76,7 @@ deploy "#{home_dir}/droonga-engine" do
 
     template "#{config_dir}/fluentd.conf" do
       source "droonga-engine-fluentd.conf.erb"
+      cookbook droonga_engine.template.cookbooks["fluentd.conf"]
       user user_name
       group group_name
       mode 0644
@@ -83,6 +84,7 @@ deploy "#{home_dir}/droonga-engine" do
 
     template "#{config_dir}/catalog.json" do
       source "droonga-engine-catalog.json.erb"
+      cookbook droonga_engine.template.cookbooks["catalog.json"]
       user user_name
       group group_name
       mode 0644
@@ -106,4 +108,3 @@ template log_config do
   source "sv-droonga-engine-log-config.erb"
   mode 0644
 end
-
