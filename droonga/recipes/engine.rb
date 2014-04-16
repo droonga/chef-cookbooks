@@ -44,7 +44,7 @@ gem_package "bundler" do
 end
 
 deploy "#{home_dir}/droonga-engine" do
-  repo "https://github.com/droonga/fluent-plugin-droonga"
+  repo "https://github.com/droonga/droonga-engine"
   user user_name
   group group_name
   shallow_clone
