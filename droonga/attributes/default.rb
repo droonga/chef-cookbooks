@@ -6,5 +6,3 @@ default.droonga.engine.host       = node.name
 default.droonga.engine.port       = 24224
 default.droonga.engine.tag        = "droonga"
 default.droonga.engine.template.cookbooks = {}
-
-default["build_essential"]["compiletime"] = true
