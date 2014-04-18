@@ -62,7 +62,7 @@ deploy "#{home_dir}/droonga-engine" do
   action :deploy
 
   migrate true
-  migration_command "bundle install --path vendor/bundle --binstubs --shebang $(which ruby)"
+  migration_command "bundle install --path vendor/bundle --shebang $(which ruby)"
 
   before_migrate do
     log_dir = "#{new_resource.shared_path}/log"
