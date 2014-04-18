@@ -11,38 +11,50 @@
   },
   "datasets": {
     "Droonga": {
-      "workers": 2,
-      "plugins": ["search", "groonga", "add"],
-      "number_of_replicas": 2,
-      "number_of_partitions": 2,
-      "partition_key": "_key",
-      "date_range": "infinity",
-      "ring": {
-        "<%= engine.host %>:23041": {
-          "weight": 50,
-          "partitions": {
-            "2014-01-24": [
-              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.000",
-              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.001"
-            ]
-          }
+      "nWorkers": 2,
+      "plugins": ["groonga", "crud", "search"],
+      "replicas": [
+        {
+          "dimension": "_key",
+          "slicer": "hash",
+          "slices": [
+            {
+              "label": "slice000",
+              "weight": 50,
+              "volume": {
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.000"
+              }
+            },
+            {
+              "label": "slice001",
+              "weight": 50,
+              "volume": {
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.001"
+              }
+            }
+          ]
         },
-        "<%= engine.host %>:23042": {
-          "weight": 50,
-          "partitions": {
-            "2014-01-24": [
-              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.002",
-              "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.003"
-            ]
-          }
+        {
+          "dimension": "_key",
+          "slicer": "hash",
+          "slices": [
+            {
+              "label": "slice010",
+              "weight": 50,
+              "volume": {
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.010"
+              }
+            },
+            {
+              "label": "slice011",
+              "weight": 50,
+              "volume": {
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.011"
+              }
+            }
+          ]
         }
-      }
+      ]
     }
-  },
-  "input_adapter": {
-    "plugins": ["crud", "groonga"]
-  },
-  "output_adapter": {
-    "plugins": ["crud", "groonga"]
   }
 }
