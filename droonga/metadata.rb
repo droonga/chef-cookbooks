@@ -10,4 +10,5 @@ recipe "droonga", "Installs and configures Droonga engine and protocol adapter"
 
 depends "runit"
 depends "build-essential"
+depends "git"
 depends "groonga"

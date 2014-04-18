@@ -18,6 +18,7 @@
 #
 
 include_recipe "build-essential"
+include_recipe "git"
 include_recipe "groonga::development"
 
 droonga_engine = node.droonga.engine
