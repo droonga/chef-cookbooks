@@ -79,14 +79,6 @@ deploy "#{home_dir}/droonga-engine" do
       mode 0755
     end
 
-    template "#{config_dir}/fluentd.conf" do
-      source "droonga-engine-fluentd.conf.erb"
-      cookbook droonga_engine.template.cookbooks["fluentd.conf"]
-      user user_name
-      group group_name
-      mode 0644
-    end
-
     template "#{config_dir}/catalog.json" do
       source "droonga-engine-catalog.json.erb"
       cookbook droonga_engine.template.cookbooks["catalog.json"]
