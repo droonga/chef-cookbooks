@@ -40,6 +40,10 @@ user user_name do
   supports :manage_home => true
 end
 
+package "ruby-dev" do
+  action :install
+end
+
 gem_package "bundler" do
   action :install
 end
