@@ -16,4 +16,4 @@ fluentd_conf="${config_dir}/fluentd.conf"
 export DROONGA_CATALOG="${config_dir}/catalog.json"
 
 cd "$work_dir"
-exec chpst -u "$user:$group" "${work_dir}/bin/droonga-engine" --config "${fluentd_conf}"
+exec chpst -u "$user:$group" bundle exec "${work_dir}/bin/droonga-engine" --config "${fluentd_conf}"
