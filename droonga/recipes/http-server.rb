@@ -48,6 +48,7 @@ deploy "#{home_dir}/droonga-http-server" do
   keep_releases 10
   purge_before_symlink ["log", "tmp/pids"]
   create_dirs_before_symlink ["tmp"]
+  symlink_before_migrate "config" => "config"
   symlinks "pids" => "tmp/pids",
            "log" => "log"
   action :deploy
@@ -58,6 +59,13 @@ deploy "#{home_dir}/droonga-http-server" do
   before_migrate do
     log_dir = "#{new_resource.shared_path}/log"
     directory log_dir do
+      user user_name
+      group group_name
+      mode 0755
+    end
+
+    config_dir = "#{new_resource.shared_path}/config"
+    directory config_dir do
       user user_name
       group group_name
       mode 0755
