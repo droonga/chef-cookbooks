@@ -2,7 +2,7 @@
 # Cookbook Name:: droonga
 # Recipe:: engine
 #
-# Copyright 2014, Kouhei Sutou
+# Copyright 2014, YUKI Hiroshi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
