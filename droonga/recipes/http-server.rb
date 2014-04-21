@@ -54,7 +54,7 @@ deploy "#{home_dir}/droonga-http-server" do
   action :deploy
 
   migrate true
-  migration_command "su -c '#{user_name}' 'npm install'"
+  migration_command "su '#{user_name}' -c 'npm install'"
 
   before_migrate do
     log_dir = "#{new_resource.shared_path}/log"
