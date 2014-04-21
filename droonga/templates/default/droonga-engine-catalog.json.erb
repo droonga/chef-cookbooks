@@ -1,4 +1,3 @@
-<% common = node.droonga.common %>
 <% engine = node.droonga.engine %>
 {
   "version": 2,
@@ -15,13 +14,13 @@
             {
               "weight": 50,
               "volume": {
-                "address": "<%= common.host %>:<%= engine.port %>/<%= common.tag %>.000"
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.000"
               }
             },
             {
               "weight": 50,
               "volume": {
-                "address": "<%= common.host %>:<%= engine.port %>/<%= common.tag %>.001"
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.001"
               }
             }
           ]
@@ -33,13 +32,13 @@
             {
               "weight": 50,
               "volume": {
-                "address": "<%= common.host %>:<%= engine.port %>/<%= common.tag %>.010"
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.010"
               }
             },
             {
               "weight": 50,
               "volume": {
-                "address": "<%= common.host %>:<%= engine.port %>/<%= common.tag %>.011"
+                "address": "<%= engine.host %>:<%= engine.port %>/<%= engine.tag %>.011"
               }
             }
           ]

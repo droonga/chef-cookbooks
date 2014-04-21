@@ -1,5 +1,4 @@
 #!/bin/bash
-<% common      = node.droonga.common %>
 <% engine      = node.droonga.engine %>
 <% http_server = node.droonga.http_server %>
 
@@ -17,11 +16,11 @@ work_dir="$(eval "echo ~${user}")/droonga-http-server/current"
 cd "$work_dir"
 exec chpst -u "$user:$group" \
   "${work_dir}/bin/droonga-http-server" \
-    --host "<%= common.host %>" \
+    --host "<%= http_server.host %>" \
     --port <%= http_server.port %> \
-    --tag "<%= common.tag %>" \
+    --tag "<%= engine.tag %>" \
     --receive-host-name <%= http_server.port %> \
-    --droonga-engine-host-name <%= common.host %> \
+    --droonga-engine-host-name <%= engine.host %> \
     --droonga-engine-port <%= engine.port %> \
-    --droonga-default-dataset <%= common.default_dataset %> \
+    --droonga-default-dataset <%= http_server.default_dataset %> \
     --cache-size <%= http_server.cache_size %>
