@@ -16,10 +16,9 @@ work_dir="$(eval "echo ~${user}")/droonga-http-server/current"
 cd "$work_dir"
 exec chpst -u "$user:$group" \
   "${work_dir}/bin/droonga-http-server" \
-    --host "<%= http_server.host %>" \
     --port <%= http_server.port %> \
     --tag "<%= engine.tag %>" \
-    --receive-host-name <%= http_server.port %> \
+    --receive-host-name <%= http_server.host %> \
     --droonga-engine-host-name <%= engine.host %> \
     --droonga-engine-port <%= engine.port %> \
     --droonga-default-dataset <%= http_server.default_dataset %> \
