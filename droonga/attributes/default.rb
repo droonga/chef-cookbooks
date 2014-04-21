@@ -1,3 +1,5 @@
+nodejs["npm"] = "1.4.7"
+
 default.droonga.engine.user_name  = "droonga-engine"
 default.droonga.engine.group_name = "droonga-engine"
 default.droonga.engine.home       = "/home/droonga-engine"
