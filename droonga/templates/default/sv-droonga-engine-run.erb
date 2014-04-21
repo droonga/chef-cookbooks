@@ -1,4 +1,5 @@
 #!/bin/bash
+<% common = node.droonga.common %>
 <% engine = node.droonga.engine %>
 
 exec 2>&1
@@ -18,6 +19,6 @@ export DROONGA_CATALOG="${config_dir}/catalog.json"
 cd "$work_dir"
 exec chpst -u "$user:$group" \
   bundle exec "${work_dir}/bin/droonga-engine" \
-    --host "<%= engine.host %>" \
+    --host "<%= common.host %>" \
     --port <%= engine.port %> \
-    --tag "<%= engine.tag %>"
+    --tag "<%= common.tag %>"

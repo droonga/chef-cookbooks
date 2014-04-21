@@ -21,6 +21,7 @@ include_recipe "nodejs"
 include_recipe "npm"
 include_recipe "git"
 
+droonga_common      = node.droonga.common
 droonga_http_server = node.droonga.http_server
 
 user_name  = droonga_http_server.user_name
