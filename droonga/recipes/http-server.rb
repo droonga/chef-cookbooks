@@ -18,7 +18,7 @@
 #
 
 include_recipe "nodejs"
-include_recipe "npm"
+include_recipe "nodejs::npm"
 include_recipe "git"
 
 droonga_engine      = node.droonga.engine

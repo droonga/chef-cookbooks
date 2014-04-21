@@ -12,6 +12,5 @@ depends "runit"
 depends "build-essential"
 depends "git"
 depends "nodejs"
-depends "npm"
 
 depends "groonga"
