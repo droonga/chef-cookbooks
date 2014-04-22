@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: droonga
-# Recipe:: engine
+# Recipe:: http-server
 #
 # Copyright 2014, YUKI Hiroshi
 #
